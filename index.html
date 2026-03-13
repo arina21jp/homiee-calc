@@ -37,21 +37,91 @@
 
         /* --- 🖨️ 印刷用設定 (A5 縦向き) --- */
         @media print {
-            @page { size: A5 portrait; margin: 15mm; }
-            body { background: white; padding: 0; margin: 0; color: #000; }
-            .container, .print-btn { display: none !important; }
-            
-            #print-area { display: block !important; width: 100%; font-size: 11pt; }
-            .header-info { text-align: center; margin-bottom: 10px; border-bottom: 2px solid #000; padding-bottom: 10px; }
-            .header-title { font-size: 18pt; font-weight: bold; }
-            .date-row { text-align: right; margin: 10px 0 20px 0; }
-            .message { margin: 20px 0; line-height: 1.8; }
-            .print-table { width: 100%; border-collapse: collapse; margin: 20px 0; border: 1px solid #000; }
-            .print-table th, .print-table td { border: 1px solid #000; padding: 10px; text-align: left; }
-            .print-table th { background-color: #f2f2f2 !important; -webkit-print-color-adjust: exact; }
-            .total-section { font-size: 18pt; font-weight: bold; text-align: center; margin: 35px 0; border: 2px solid #000; padding: 15px; }
-            .footer-info { text-align: right; margin-top: 60px; font-size: 10pt; line-height: 1.6; }
-        }
+
+  @page {
+    size: A5 portrait;
+    margin: 5mm;
+  }
+
+  body {
+    background: white;
+    padding: 0;
+    margin: 0;
+    color: #000;
+  }
+
+  .container,
+  .print-btn {
+    display: none !important;
+  }
+
+  /* 印刷エリア */
+
+  #print-area {
+    display: block !important;
+
+    /* A5サイズ固定 */
+    width: 148mm;
+
+    /* Safariフッター回避 */
+    height: 190mm;
+
+    overflow: hidden;
+
+    font-size: 11pt;
+  }
+
+  .header-info {
+    text-align: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+  }
+
+  .header-title {
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  .date-row {
+    text-align: right;
+    margin: 10px 0 20px 0;
+  }
+
+  .message {
+    margin: 20px 0;
+    line-height: 1.8;
+  }
+
+  .print-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border: 1px solid #000;
+  }
+
+  .print-table th,
+  .print-table td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: left;
+  }
+
+  .total-section {
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+    margin: 35px 0;
+    border: 2px solid #000;
+    padding: 15px;
+  }
+
+  .footer-info {
+    text-align: right;
+    margin-top: 40px;
+    font-size: 10pt;
+  }
+}
 
         .sub-note { font-size: 0.82rem; color: #5f6b7a; text-align: center; margin-top: 10px; }
     </style>
